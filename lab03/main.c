@@ -122,4 +122,13 @@ int main(int argc, char *argv[]){
     }
 
     printf("%d*x^0\n", results[threads][1]);
+    
+        if(pthread_mutex_destroy(&mutex) < 0){
+        perror("Mutex destroy error");
+        exit(1);
+    }
+    free(polinoms);
+    free(tid);
+    free(results);
+    free(args);
 }
