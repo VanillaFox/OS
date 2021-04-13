@@ -67,10 +67,10 @@ int main(int argc, char *argv[]){
             while(scanf("%s", str) > 0){
                 str[strlen(str)] = '\n';
                 if(k % 2){
-                    write(fd2[1], str, strlen(str));
+                    write(fd1[1], str, strlen(str));
                 }
                 else{
-                    write(fd1[1], str, strlen(str));
+                    write(fd2[1], str, strlen(str));
                 }
                 k++;
                 memset(str,'\0',257);
