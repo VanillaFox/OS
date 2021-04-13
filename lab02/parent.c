@@ -63,7 +63,7 @@ int main(int argc, char *argv[]){
         }
         else{
             char str[257];
-            int k = 0;
+            int k = 1;
             while(scanf("%s", str) > 0){
                 str[strlen(str)] = '\n';
                 if(k % 2){
