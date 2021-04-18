@@ -57,7 +57,6 @@ int main(int argc, char *argv[]){
 
     threads = atoi(argv[1]);
     int polinomsCount = atoi(argv[2]);
-    //int degree = 100, maxDegree = 100;
     int degree, maxDegree;
     printf("Enter maximum degree of a polynomial: ");
     scanf("%d", &maxDegree);
@@ -72,7 +71,6 @@ int main(int argc, char *argv[]){
         polinoms[i][0] = degree;
         for(int j = degree + 1; j > 0; j--){
             scanf("%d", &polinoms[i][j]);
-            //polinoms[i][j - 1] = 1;
         }
     }
 
