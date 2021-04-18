@@ -57,6 +57,7 @@ int main(int argc, char *argv[]){
 
     threads = atoi(argv[1]);
     int polinomsCount = atoi(argv[2]);
+    //int degree = 100, maxDegree = 100;
     int degree, maxDegree;
     printf("Enter maximum degree of a polynomial: ");
     scanf("%d", &maxDegree);
@@ -71,6 +72,7 @@ int main(int argc, char *argv[]){
         polinoms[i][0] = degree;
         for(int j = degree + 1; j > 0; j--){
             scanf("%d", &polinoms[i][j]);
+            //polinoms[i][j - 1] = 1;
         }
     }
 
@@ -79,8 +81,8 @@ int main(int argc, char *argv[]){
 
     results = (int**)malloc(sizeof(int*) * (threads + 1));
     for(int i = 0; i < threads + 1; i++){
-        results[i] = (int*)malloc((maxSize + 1) * sizeof(int));
-        memset(results[i], 0, (maxSize + 1) * sizeof(int));
+        results[i] = (int*)malloc((maxSize + 2) * sizeof(int));
+        memset(results[i], 0, (maxSize + 2) * sizeof(int));
         results[i][0] = 0;
         results[i][1] = 1;
     }
@@ -122,7 +124,6 @@ int main(int argc, char *argv[]){
     }
 
     printf("%d*x^0\n", results[threads][1]);
-    
     if(pthread_mutex_destroy(&mutex) < 0){
         perror("Mutex destroy error");
         exit(1);
