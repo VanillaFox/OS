@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
         exit(1);
     }
 
-    int res = open(filename, O_RDWR | O_CREAT);
+    int res = open(filename, O_RDWR | O_CREAT, 0666);
     if(res < 0){
         perror("open");
         exit(1);
