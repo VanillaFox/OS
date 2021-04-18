@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
     printf("Name of the 2nd child file: %s\n", argv[2]);
     filename1 = argv[1], filename2 = argv[2];
     int fd1[2];
-    int file1 = open(filename1, O_WRONLY | O_CREAT);
+    int file1 = open(filename1, O_WRONLY | O_CREAT, 0666);
     if(file1 == -1){
         perror("File of the first child is not open");
         exit(1);
@@ -42,7 +42,7 @@ int main(int argc, char *argv[]){
     else{
         close(fd1[0]);
         int fd2[2];
-        int file2 = open(filename2, O_WRONLY | O_CREAT);
+        int file2 = open(filename2, O_WRONLY | O_CREAT, 0666);
         if(file2 == -1){
             perror("File of second child is not open");
             exit(1);
