@@ -3,6 +3,8 @@ CFLAGS = -g -c -Wall
 ADDLIB = -lm
 
 all: main1 main2
+	export LD_LIBRARY_PATH=.
+
 
 main1: libfunc1.so main1.c
 	$(CC) main1.c -L. -lfunc1 -o main1 $(ADDLIB)
